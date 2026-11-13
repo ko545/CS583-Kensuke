@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController charController;
 
     // do we need the actions, or just the actionmap itself
-    private InputAction moveInput;
+    private InputAction moveAction;
 
     private float currentMoveSpeed = 0.0f;
     private Vector3 moveDirection = Vector3.zero;
@@ -26,12 +26,37 @@ public class PlayerController : MonoBehaviour
         mainCamera = GetComponentInChildren<Camera>();
         charController = GetComponent<CharacterController>();
 
-        moveInput = InputSystem.actions.FindAction("Move");
+        moveAction = InputSystem.actions.FindAction("Move");
 
-        // don't wanna make cursor visible on screen
+        // make cursor visible on screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         currentMoveSpeed = walkSpeed;
+    }
+
+    private void Update()
+    {
+        Vector2 moveVector = moveAction.ReadValue<Vector2>();
+        HandleMovement(moveVector);
+    }
+
+    private void HandleMovement(Vector2 moveVector)
+    {
+        // from local to world space
+        // isnt this the WASD, both vertical and horizontal movement ? 
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Vector3 right = transform.TransformDirection(Vector3.right);
+
+        float oldY = moveDirection.y;
+
+        // i can just say explicitly that walkSpeed is always our current move speed
+        Vector2 newSpeed = new Vector2(moveVector.y * currentMoveSpeed, moveVector.x * currentMoveSpeed);
+
+        moveDirection = (forward * newSpeed.x) + (right * newSpeed.y);
+        moveDirection.y = oldY;
+
+        // move the actual char controller
+        charController.Move(moveDirection * Time.deltaTime);
     }
 }
