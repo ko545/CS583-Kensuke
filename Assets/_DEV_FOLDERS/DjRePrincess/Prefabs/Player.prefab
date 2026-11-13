@@ -239,6 +239,9 @@ GameObject:
   - component: {fileID: 3669087216992409867}
   - component: {fileID: 3330902168271503075}
   - component: {fileID: 2476364665175658443}
+  - component: {fileID: 1779942723567055899}
+  - component: {fileID: 8839849530811076328}
+  - component: {fileID: 743119253049498616}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -261,7 +264,6 @@ Transform:
   m_Children:
   - {fileID: 9141813288918397583}
   - {fileID: 8413407311169214162}
-  - {fileID: 3799497193756130299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3669087216992409867
@@ -327,46 +329,13 @@ MonoBehaviour:
   walkSpeed: 5.5
   lookSensitivity: 0.2
   lookAngleLimit: 90
---- !u!1 &7579165531345070823
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3799497193756130299}
-  - component: {fileID: 3713558127724450805}
-  - component: {fileID: 9162943505836723759}
-  m_Layer: 0
-  m_Name: StateMachine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3799497193756130299
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7579165531345070823}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3785276503420999237}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3713558127724450805
+--- !u!114 &1779942723567055899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7579165531345070823}
+  m_GameObject: {fileID: 7177716983138992413}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 015d605c2aa92bc4b831202a1bc6b677, type: 3}
@@ -374,15 +343,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   CurrentState: 0
   player: {fileID: 7177716983138992413}
---- !u!114 &9162943505836723759
+--- !u!114 &8839849530811076328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7579165531345070823}
+  m_GameObject: {fileID: 7177716983138992413}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48c20161c2d3fc64f91e59b5c29c115e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinManager
+--- !u!114 &743119253049498616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177716983138992413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3646117e6c56e4a8531c3fede706f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExitTouched
