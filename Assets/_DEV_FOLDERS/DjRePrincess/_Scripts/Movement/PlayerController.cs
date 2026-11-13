@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,8 +14,6 @@ public class PlayerController : MonoBehaviour
 
     private Camera mainCamera;
     private CharacterController charController;
-
-    // do we need the actions, or just the actionmap itself
     private InputAction moveAction;
 
     private float currentMoveSpeed = 0.0f;
@@ -38,7 +37,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Vector2 moveVector = moveAction.ReadValue<Vector2>();
+
+        // amount the mouse have moved since prev frame
+        Vector2 mouseDelta = new Vector2(Mouse.current.delta.x.ReadValue(), Mouse.current.delta.y.ReadValue());
         HandleMovement(moveVector);
+        HandleLooking(mouseDelta);
     }
 
     private void HandleMovement(Vector2 moveVector)
@@ -58,5 +61,18 @@ public class PlayerController : MonoBehaviour
 
         // move the actual char controller
         charController.Move(moveDirection * Time.deltaTime);
+    }
+
+    private void HandleLooking(Vector2 mouseDelta)
+    {
+        // this is the mouse, how do we do the camera
+        lookAngle += -mouseDelta.y * lookSensitivity;
+        lookAngle = Mathf.Clamp(lookAngle, -lookAngleLimit, lookAngleLimit);
+
+        // rotate camera for up and down movement 
+        mainCamera.transform.localRotation = Quaternion.Euler(lookAngle, 0, 0);
+
+        // rotate player for horizontal movement 
+        transform.rotation *= Quaternion.Euler(0, mouseDelta.x * lookSensitivity, 0);
     }
 }
