@@ -4,16 +4,13 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class PlayerController : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [SerializeField] private float walkSpeed = 5.5f;
-    
     private CharacterController charController;
     private InputAction moveAction;
-
     private float currentMoveSpeed = 0.0f;
     private Vector3 moveDirection = Vector3.zero;
-    
 
     private void Start()
     {
