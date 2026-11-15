@@ -5,9 +5,11 @@ public class EnemyIdleState : EnemyBaseState
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in IDLE state");
+        context.mat.color = Color.blue;
         //context.AttackRange.enabled = false;
         //context.AttackRange.GetComponent<Collider>().enabled = true;
-        context.mat.color = Color.blue;
+        
+        context.animator.Play("slime_idle");
 
 
     }
@@ -16,7 +18,7 @@ public class EnemyIdleState : EnemyBaseState
     {
         if (context.ViewRange.playerIsInRange())
         {
-            context.SwitchState(context.ChaseState);
+            context.SwitchState(context.RotateState);
         }
     }
 }

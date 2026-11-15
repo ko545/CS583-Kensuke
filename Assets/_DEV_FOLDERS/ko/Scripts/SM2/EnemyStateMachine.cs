@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class EnemyStateMachine : MonoBehaviour
 {
     public readonly EnemyBaseState IdleState = new EnemyIdleState();
+    public readonly EnemyBaseState RotateState = new EnemyRotateState();
     public readonly EnemyBaseState ChaseState = new EnemyChaseState();
     public readonly EnemyBaseState AttackState = new EnemyAttackState();
     
@@ -16,6 +17,9 @@ public class EnemyStateMachine : MonoBehaviour
     
     [Header("Navigation Agent")]
     [SerializeField] public NavMeshAgent agent;
+    
+    [Header("Animations")]
+    [SerializeField] public Animator animator;
 
     [Header("Debug Material")]
     [SerializeField] public Material mat;
@@ -26,6 +30,7 @@ public class EnemyStateMachine : MonoBehaviour
         //AttackRange.enabled = false;
         currentState = IdleState; 
         currentState.EnterState(this);
+        animator.Play("slime_idle");
     }
 
     // void OnCollisionEnter(Collision collision)

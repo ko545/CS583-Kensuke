@@ -5,12 +5,12 @@ public class EnemyChaseState : EnemyBaseState
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in CHASE state");
-        //activate the 
+        context.mat.color = Color.purple;
         //context.AttackRange.GetComponent<Collider>().enabled = false;
+        
         //allow the enemy to move
         context.agent.isStopped = false;
-        context.mat.color = Color.purple;
-
+        context.animator.Play("slime_walk");
     }
 
     public override void UpdateState(EnemyStateMachine context)
@@ -27,7 +27,7 @@ public class EnemyChaseState : EnemyBaseState
         // check if agent is still moving
         if (!context.agent.pathPending)
         {
-            if (!context.agent.hasPath || context.agent.velocity.sqrMagnitude == 0.0f)
+            if (!context.agent.hasPath) // || context.agent.velocity.sqrMagnitude == 0.0f)
             {
                 //switch to idle state once done moving
                 context.SwitchState(context.IdleState);
