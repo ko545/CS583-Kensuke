@@ -16,9 +16,16 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void UpdateState(EnemyStateMachine context)
     {
+        //if got hit, go to hit state
+        if (context.HurtBox.playerIsInRange())
+        {
+            GotHit(context);
+        }
+        
         if (context.ViewRange.playerIsInRange())
         {
             context.SwitchState(context.RotateState);
         }
     }
+    
 }

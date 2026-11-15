@@ -8,12 +8,16 @@ public class EnemyStateMachine : MonoBehaviour
     public readonly EnemyBaseState RotateState = new EnemyRotateState();
     public readonly EnemyBaseState ChaseState = new EnemyChaseState();
     public readonly EnemyBaseState AttackState = new EnemyAttackState();
+    public readonly EnemyBaseState HitState = new EnemyHitState();
 
     private EnemyBaseState currentState;
+
+    public int health = 100;
     
     [Header("Sensors")]
     [SerializeField] public EnemySensors ViewRange;
     [SerializeField] public EnemySensors AttackRange;
+    [SerializeField] public EnemySensors HurtBox;
     
     [Header("Navigation Agent")]
     [SerializeField] public NavMeshAgent agent;
@@ -36,6 +40,20 @@ public class EnemyStateMachine : MonoBehaviour
 
     void Update()
     {
+        //disable object if no hp left
+        if (health <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
+        
+        // if (HurtBox.playerIsInRange())
+        // {
+        //     wasHit = true;
+        //     HurtBox.setStatus(false);
+        // }
+        // if (wasHit) SwitchState(HitState);
+        
+        //update current state
         currentState.UpdateState(this);
     }
 

@@ -16,6 +16,13 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void UpdateState(EnemyStateMachine context)
     {
+        //if got hit, go to hit state
+        if (context.HurtBox.playerIsInRange())
+        {
+            waitingToExit = false;
+            GotHit(context);
+        }
+        
         if (waitingToExit)
         {
             //check if attack_end animation is done

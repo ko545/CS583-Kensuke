@@ -18,6 +18,12 @@ public class EnemyRotateState : EnemyBaseState
 
     public override void UpdateState(EnemyStateMachine context)
     {
+        //if got hit, go to hit state
+        if (context.HurtBox.playerIsInRange())
+        {
+            GotHit(context);
+        }
+        
         //get target's direction
         targetDirection = context.ViewRange.getTargetPosition() - context.gameObject.transform.position;
         //ignore height

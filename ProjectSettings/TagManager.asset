@@ -14,10 +14,10 @@ TagManager:
   - Player
   - EnemySensors
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - PlayerAttack
+  - EnemyAttack
+  - EnemyHurtbox
+  - PlayerHurtbox
   - 
   - 
   - 

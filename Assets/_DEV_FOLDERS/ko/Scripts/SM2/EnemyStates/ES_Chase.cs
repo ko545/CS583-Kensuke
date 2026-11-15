@@ -15,6 +15,12 @@ public class EnemyChaseState : EnemyBaseState
 
     public override void UpdateState(EnemyStateMachine context)
     {
+        //if got hit, go to hit state
+        if (context.HurtBox.playerIsInRange())
+        {
+            GotHit(context);
+        }
+        
         //chase player
         context.agent.SetDestination(context.ViewRange.getTargetPosition());
         

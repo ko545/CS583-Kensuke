@@ -35,6 +35,11 @@ public class EnemySensors : MonoBehaviour
     {
         return targetPos;
     }
+
+    public void setStatus(bool status)
+    {
+        isInRange = status;
+    }
     
     // public Transform getTargetTransform()
     // {
