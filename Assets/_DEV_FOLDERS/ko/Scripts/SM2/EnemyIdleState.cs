@@ -5,7 +5,7 @@ public class EnemyIdleState : EnemyBaseState
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in IDLE state");
-        context.mat.color = Color.blue;
+        context.render.material.color = Color.blue;
         //context.AttackRange.enabled = false;
         //context.AttackRange.GetComponent<Collider>().enabled = true;
         

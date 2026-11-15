@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class EnemySensors : MonoBehaviour
 {
-
-    
-    private ko_State currentState;
     private bool isInRange = false;
     private Vector3 targetPos;
-    private Transform targetTransform;
+    //private Transform targetTransform;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,7 +17,7 @@ public class EnemySensors : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         targetPos = other.transform.position;
-        targetTransform = other.transform;
+        //targetTransform = other.transform;
     }
 
     private void OnTriggerExit(Collider other)
@@ -38,10 +35,11 @@ public class EnemySensors : MonoBehaviour
     {
         return targetPos;
     }
-    public Transform getTargetTransform()
-    {
-        return targetTransform;
-    }
+    
+    // public Transform getTargetTransform()
+    // {
+    //     return targetTransform;
+    // }
     
     
 }

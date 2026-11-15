@@ -11,7 +11,7 @@ public class EnemyRotateState : EnemyBaseState
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in ROTATE state");
-        context.mat.color = Color.green;
+        context.render.material.color = Color.green;
         
         context.animator.Play("slime_walk");
     }

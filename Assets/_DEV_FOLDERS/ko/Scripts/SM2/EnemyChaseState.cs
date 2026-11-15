@@ -5,7 +5,7 @@ public class EnemyChaseState : EnemyBaseState
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in CHASE state");
-        context.mat.color = Color.purple;
+        context.render.material.color = Color.purple;
         //context.AttackRange.GetComponent<Collider>().enabled = false;
         
         //allow the enemy to move

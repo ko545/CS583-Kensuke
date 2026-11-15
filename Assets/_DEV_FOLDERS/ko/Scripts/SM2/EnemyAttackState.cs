@@ -6,7 +6,7 @@ public class EnemyAttackState : EnemyBaseState
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in ATTACK state");
-        context.mat.color = Color.red;
+        context.render.material.color = Color.red;
         
         //stop the enemy from moving
         waitingToExit = false;
