@@ -5,27 +5,24 @@ public class EnemyIdleState : EnemyBaseState
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in IDLE state");
-        context.render.material.color = Color.blue;
-        //context.AttackRange.enabled = false;
-        //context.AttackRange.GetComponent<Collider>().enabled = true;
+        context.render.material.color = Color.deepSkyBlue;
         
-        context.animator.Play("slime_idle");
-
-
+        context.alert = false;
+        //deactivate the attack sensor. player is not in view
+        context.AttackRange.gameObject.SetActive(false);
+        context.ChaseRange.gameObject.SetActive(false);
+        //play animation
+        context.animator.Play("idle");
     }
 
     public override void UpdateState(EnemyStateMachine context)
     {
-        //if got hit, go to hit state
-        if (context.HurtBox.playerIsInRange())
-        {
-            GotHit(context);
-        }
-        
+        if (context.HurtBox.playerIsInRange()) { GotHit(context); }
+
         if (context.ViewRange.playerIsInRange())
         {
-            context.SwitchState(context.RotateState);
+            context.SwitchState(context.AlertState);
         }
+        
     }
-    
 }

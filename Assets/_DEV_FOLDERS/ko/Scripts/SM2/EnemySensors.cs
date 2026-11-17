@@ -16,6 +16,7 @@ public class EnemySensors : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        //isInRange = true;
         targetPos = other.transform.position;
         //targetTransform = other.transform;
     }

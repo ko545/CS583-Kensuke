@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyRotateState : EnemyBaseState
@@ -12,8 +11,11 @@ public class EnemyRotateState : EnemyBaseState
     {
         Debug.Log("in ROTATE state");
         context.render.material.color = Color.green;
-        
-        context.animator.Play("slime_walk");
+
+        //activate attack sensor
+        context.AttackRange.gameObject.SetActive(true);
+        //play animation
+        context.animator.Play("walk");
     }
 
     public override void UpdateState(EnemyStateMachine context)
@@ -25,7 +27,7 @@ public class EnemyRotateState : EnemyBaseState
         }
         
         //get target's direction
-        targetDirection = context.ViewRange.getTargetPosition() - context.gameObject.transform.position;
+        targetDirection = context.ChaseRange.getTargetPosition() - context.gameObject.transform.position;
         //ignore height
         targetDirection.y = 0.0f;
         
@@ -49,7 +51,7 @@ public class EnemyRotateState : EnemyBaseState
         if (Mathf.Approximately(objectRotation.y, targetRotation.y))
         {
             //switch to appropriate state once done
-            context.SwitchState(context.ViewRange.playerIsInRange() ? context.ChaseState : context.IdleState);
+            context.SwitchState(context.ChaseRange.playerIsInRange() ? context.ChaseState : context.AlertState);
         }
     }
 }

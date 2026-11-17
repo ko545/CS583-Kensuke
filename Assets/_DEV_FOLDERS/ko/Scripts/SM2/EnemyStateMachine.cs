@@ -2,40 +2,48 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyStateMachine : MonoBehaviour
+public abstract class EnemyStateMachine : MonoBehaviour
 {
-    public readonly EnemyBaseState IdleState = new EnemyIdleState();
-    public readonly EnemyBaseState RotateState = new EnemyRotateState();
-    public readonly EnemyBaseState ChaseState = new EnemyChaseState();
-    public readonly EnemyBaseState AttackState = new EnemyAttackState();
-    public readonly EnemyBaseState HitState = new EnemyHitState();
-
+    //basic states
+    [NonSerialized] public EnemyBaseState IdleState;
+    [NonSerialized] public EnemyBaseState AlertState;
+    [NonSerialized] public EnemyBaseState RotateState;
+    [NonSerialized] public EnemyBaseState ChaseState;
+    [NonSerialized] public EnemyBaseState AttackState;
+    [NonSerialized] public EnemyBaseState HitState;
+    
     private EnemyBaseState currentState;
+    public bool alert = false;
 
-    public int health = 100;
+    [Header("Enemy Health")]
+    [SerializeField] public int health = 100;
     
     [Header("Sensors")]
     [SerializeField] public EnemySensors ViewRange;
+    [SerializeField] public EnemySensors ChaseRange;
     [SerializeField] public EnemySensors AttackRange;
     [SerializeField] public EnemySensors HurtBox;
     
     [Header("Navigation Agent")]
     [SerializeField] public NavMeshAgent agent;
+    [SerializeField] private float agentSpeed = 3.5f;
     
     [Header("Animations")]
     [SerializeField] public Animator animator;
 
     [Header("Debug Things")]
     [SerializeField] public MeshRenderer render;
-    //[SerializeField] public Material mat;
 
     void Start()
     {
-        render.material.color = Color.teal;
-        //AttackRange.enabled = false;
+        render.material.color = Color.white;
+        
+        //set agent speed
+        agent.speed = agentSpeed;
+        
+        //setup initial state
         currentState = IdleState; 
         currentState.EnterState(this);
-        animator.Play("slime_idle");
     }
 
     void Update()
@@ -45,13 +53,6 @@ public class EnemyStateMachine : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
-        
-        // if (HurtBox.playerIsInRange())
-        // {
-        //     wasHit = true;
-        //     HurtBox.setStatus(false);
-        // }
-        // if (wasHit) SwitchState(HitState);
         
         //update current state
         currentState.UpdateState(this);
