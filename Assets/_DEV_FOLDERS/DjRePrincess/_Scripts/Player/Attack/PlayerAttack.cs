@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private BoxCollider swordCollider;
+    //[SerializeField] private BoxCollider swordCollider;
     private Animator anim;
     private InputAction attackAction;
     private string attackText = "Attack";
@@ -25,13 +25,13 @@ public class PlayerAttack : MonoBehaviour
 
     // These are used by the sword animation events
     // to enable and disable the collider when attacking an enemy
-    private void EnableSwordCollider()
-    {
-        swordCollider.enabled = true;
-    }
+    //private void EnableSwordCollider()
+    //{
+    //    swordCollider.enabled = true;
+    //}
 
-    private void DisableSwordCollider()
-    {
-        swordCollider.enabled = false;
-    }
+    //private void DisableSwordCollider()
+    //{
+    //    swordCollider.enabled = false;
+    //}
 }
