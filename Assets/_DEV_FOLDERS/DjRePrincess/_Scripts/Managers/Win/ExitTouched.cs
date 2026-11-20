@@ -12,6 +12,7 @@ public class ExitTouched : MonoBehaviour
              //print("win state");
             UpdateGameStateToWin();
         }
+        
     }
 
     private void UpdateGameStateToWin()

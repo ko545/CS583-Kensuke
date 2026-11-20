@@ -9,11 +9,8 @@ public class Health : MonoBehaviour
     // This logic can be on the Enemy, or a dedicated script 
     private void OnCollisionEnter(Collision collision)
     {
-        bool collidedWithEnemy = collision.collider.CompareTag("Enemy");
-        if (collidedWithEnemy)
-        {
-            TakeDamage();
-        }
+        //print(collision.collider);
+        TakeDamage();
     }
 
     public void TakeDamage()
