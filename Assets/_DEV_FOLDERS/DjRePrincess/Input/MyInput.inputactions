@@ -48,12 +48,12 @@
                 },
                 {
                     "name": "Block",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "da252c38-5f50-4d2b-a018-84a034e91182",
-                    "expectedControlType": "",
+                    "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false,
+                    "initialStateCheck": true,
                     "priority": 0
                 }
             ],
