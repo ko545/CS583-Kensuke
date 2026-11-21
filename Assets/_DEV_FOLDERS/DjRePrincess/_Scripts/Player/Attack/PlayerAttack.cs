@@ -18,7 +18,8 @@ public class PlayerAttack : MonoBehaviour
     {
         if (attackAction.triggered)
         {
-            anim.SetTrigger(attackText);
+            //anim.SetTrigger(attackText);
+            anim.Play(attackText);
         }
     }
 
