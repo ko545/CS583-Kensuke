@@ -7,11 +7,14 @@ public class Health : MonoBehaviour
     [SerializeField] private float damage = 10f;
 
     // This logic can be on the Enemy, or a dedicated script 
-    private void OnCollisionEnter(Collision collision)
+
+    // the attack range objs are triggers
+    private void OnTriggerEnter(Collider other)
     {
-        //print(collision.collider);
+        print(other.name);
         TakeDamage();
     }
+
 
     public void TakeDamage()
     {
