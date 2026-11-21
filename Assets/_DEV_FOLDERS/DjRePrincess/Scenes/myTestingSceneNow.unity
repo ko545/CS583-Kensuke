@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6690590961390667141, guid: 33123176566f02641beeebe754834034, type: 3}
+      propertyPath: walkSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7177716983138992413, guid: 33123176566f02641beeebe754834034, type: 3}
       propertyPath: m_Name
       value: Player
@@ -182,6 +186,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7177716983138992413, guid: 33123176566f02641beeebe754834034, type: 3}
       insertIndex: 1
       addedObject: {fileID: 499901996}
+    - targetCorrespondingSourceObject: {fileID: 7177716983138992413, guid: 33123176566f02641beeebe754834034, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 499902007}
   m_SourcePrefab: {fileID: 100100000, guid: 33123176566f02641beeebe754834034, type: 3}
 --- !u!1 &292246110
 GameObject:
@@ -439,6 +446,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &499902007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499901985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d82df052f02e2943a643ed763a05bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Block
 --- !u!1001 &790916070
 PrefabInstance:
   m_ObjectHideFlags: 0

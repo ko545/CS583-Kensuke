@@ -6,15 +6,6 @@ public class Health : MonoBehaviour
     [SerializeField] private float playerHealth = 100f;
     [SerializeField] private float damage = 10f;
 
-    // This logic can be on the Enemy, or a dedicated script 
-
-    // the attack range objs are triggers
-    private void OnTriggerEnter(Collider other)
-    {
-        print(other.name);
-        TakeDamage();
-    }
-
 
     public void TakeDamage()
     {
