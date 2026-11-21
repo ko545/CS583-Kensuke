@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float walkSpeed = 5.5f;
     private CharacterController charController;
     private InputAction moveAction;
-    //private Vector3 moveDirection = Vector3.zero;
+    private Vector3 moveDirection = Vector3.zero;
 
     private void Start()
     {
@@ -28,6 +28,10 @@ public class Movement : MonoBehaviour
     {
         Vector2 scaledMoveVector = moveVector * walkSpeed;
 
+        // wont this be transform.position.y, not moveDirection.y
+        float oldY = transform.position.y;
+
+        // if i added y shit to this, its not horizontal motion anymore 
         Vector3 horizontalMotion = transform.TransformDirection(new Vector3(scaledMoveVector.x, 0, scaledMoveVector.y));
 
         charController.Move(horizontalMotion * Time.deltaTime);
