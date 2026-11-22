@@ -20,7 +20,7 @@ public class Block : MonoBehaviour
     // the attack range objs are triggers
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "AttackRange")
+        if (other.name == "AttackHitbox")
         {
             if (isBlocking)
             {

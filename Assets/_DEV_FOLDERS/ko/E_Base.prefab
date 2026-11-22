@@ -354,6 +354,7 @@ MonoBehaviour:
   ChaseRange: {fileID: 2414408245391208486}
   AttackRange: {fileID: 2545009674292098880}
   HurtBox: {fileID: 4381698446504837466}
+  HitBox: {fileID: 2545009674292098880}
   agent: {fileID: 5003673246753170065}
   agentSpeed: 3.5
   animator: {fileID: 1988699321887309312}

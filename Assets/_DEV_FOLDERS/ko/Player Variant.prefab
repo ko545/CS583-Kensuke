@@ -70,12 +70,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138973418132779965}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.06975647, w: 0.9975641}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7070876, y: -0.005215622, z: 0.005215512, w: 0.7070876}
+  m_LocalPosition: {x: -0.0005278463, y: -0.0030000021, z: 0.0029039711}
+  m_LocalScale: {x: 0.010000002, y: 0.0100000035, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4407177816431072456}
+  m_Father: {fileID: 8880181853997412597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8}
 --- !u!65 &5669789596526256925
 BoxCollider:
@@ -180,10 +180,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d59048dab691d176c820f9c92ddd7a82, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9078966041316342311}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d59048dab691d176c820f9c92ddd7a82, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 244659434295317071}
+    - targetCorrespondingSourceObject: {fileID: -4494741987055582250, guid: d59048dab691d176c820f9c92ddd7a82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9078966041316342311}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d59048dab691d176c820f9c92ddd7a82, type: 3}
       insertIndex: -1
@@ -206,9 +206,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbb81f234f5da44ba95d463ae4dbaae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  collider: {fileID: 2138973418132779965}
 --- !u!4 &4407177816431072456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d59048dab691d176c820f9c92ddd7a82, type: 3}
+  m_PrefabInstance: {fileID: 4225442576463196963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8880181853997412597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4494741987055582250, guid: d59048dab691d176c820f9c92ddd7a82, type: 3}
   m_PrefabInstance: {fileID: 4225442576463196963}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8358474677765181073
@@ -312,7 +318,8 @@ PrefabInstance:
       value: Player Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5680854680655923152, guid: 33123176566f02641beeebe754834034, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8413407311169214162, guid: 33123176566f02641beeebe754834034, type: 3}
       insertIndex: -1

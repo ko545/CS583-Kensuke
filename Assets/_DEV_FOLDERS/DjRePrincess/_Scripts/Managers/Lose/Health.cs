@@ -5,15 +5,13 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float playerHealth = 100f;
     [SerializeField] private float damage = 10f;
-
-
+    
     public void TakeDamage()
     {
         playerHealth -= damage;
         print(playerHealth);
 
         CheckIfPlayerDead();
-
     }
 
     private void CheckIfPlayerDead()

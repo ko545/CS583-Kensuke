@@ -4,6 +4,7 @@ public abstract class EnemyBaseState
     public abstract void UpdateState(EnemyStateMachine context);
     public void GotHit(EnemyStateMachine context)
     {
+        context.HitBox.gameObject.SetActive(false);
         //reduce enemy hp when hit by player
         context.health -= 25;
         //disable the trigger so next hit counts 
