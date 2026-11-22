@@ -8,6 +8,7 @@ public class EnemyChaseState : EnemyBaseState
         context.render.material.color = Color.purple;
         
         //activate the attack sensor
+        context.HitBox.gameObject.SetActive(false);
         context.AttackRange.gameObject.SetActive(true);
         context.ChaseRange.gameObject.SetActive(true);
         //allow the enemy to move

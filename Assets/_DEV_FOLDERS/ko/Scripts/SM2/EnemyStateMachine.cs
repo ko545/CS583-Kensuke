@@ -23,6 +23,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
     [SerializeField] public EnemySensors ChaseRange;
     [SerializeField] public EnemySensors AttackRange;
     [SerializeField] public EnemySensors HurtBox;
+    [SerializeField] public EnemySensors HitBox;
     
     [Header("Navigation Agent")]
     [SerializeField] public NavMeshAgent agent;
@@ -36,6 +37,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
     void Start()
     {
+        HitBox.gameObject.SetActive(false);
         render.material.color = Color.white;
         
         //set agent speed

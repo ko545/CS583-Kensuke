@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
         // if i added y shit to this, its not horizontal motion anymore 
         Vector3 horizontalMotion = transform.TransformDirection(new Vector3(scaledMoveVector.x, 0, scaledMoveVector.y));
 
-        charController.Move(horizontalMotion * Time.deltaTime);
+        charController.SimpleMove(horizontalMotion * Time.deltaTime);
     }
 
     //private void HandleMovement(Vector2 moveVector)

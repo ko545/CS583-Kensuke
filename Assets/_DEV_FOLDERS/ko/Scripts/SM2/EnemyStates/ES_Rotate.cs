@@ -13,6 +13,7 @@ public class EnemyRotateState : EnemyBaseState
         context.render.material.color = Color.green;
 
         //activate attack sensor
+        context.HitBox.gameObject.SetActive(false);
         context.AttackRange.gameObject.SetActive(true);
         //play animation
         context.animator.Play("walk");

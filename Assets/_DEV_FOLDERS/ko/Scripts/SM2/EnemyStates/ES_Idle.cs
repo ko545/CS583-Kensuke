@@ -9,6 +9,7 @@ public class EnemyIdleState : EnemyBaseState
         
         context.alert = false;
         //deactivate the attack sensor. player is not in view
+        context.HitBox.gameObject.SetActive(false);
         context.AttackRange.gameObject.SetActive(false);
         context.ChaseRange.gameObject.SetActive(false);
         //play animation
