@@ -6,15 +6,18 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float rayDistance = 3f;
     [SerializeField] private LayerMask interactableLayer;
     private Camera cam;
+    private PromptMessage promptMessageObj;
     
     void Start()
     {
         cam = GetComponentInChildren<Camera>();
+        promptMessageObj = GetComponent<PromptMessage>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        ClearPromptOnScreen();
         Vector3 origin = cam.transform.position;
         Vector3 direction = cam.transform.forward;
 
@@ -34,9 +37,14 @@ public class PlayerInteract : MonoBehaviour
             bool objHasInteractableComponent = hitInfo.collider.GetComponent<Interactable>();
             if (objHasInteractableComponent)
             {
-                print(hitInfo.collider.GetComponent<Interactable>().promptMessage);
+                promptMessageObj.UpdateText((hitInfo.collider.GetComponent<Interactable>().promptMessage));
             }
         }
         
+    }
+    private void ClearPromptOnScreen()
+    {
+        // clear prompt on screen when not looking at an Interactable obj
+        promptMessageObj.UpdateText(string.Empty);
     }
 }
