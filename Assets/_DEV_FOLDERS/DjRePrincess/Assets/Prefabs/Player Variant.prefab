@@ -10047,15 +10047,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785276503420999237, guid: 33123176566f02641beeebe754834034, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.69675195
       objectReference: {fileID: 0}
     - target: {fileID: 3785276503420999237, guid: 33123176566f02641beeebe754834034, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.9825344
       objectReference: {fileID: 0}
     - target: {fileID: 3785276503420999237, guid: 33123176566f02641beeebe754834034, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 93.78
       objectReference: {fileID: 0}
     - target: {fileID: 3785276503420999237, guid: 33123176566f02641beeebe754834034, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10132,10 +10132,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8413407311169214162, guid: 33123176566f02641beeebe754834034, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4407177816431072456}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7177716983138992413, guid: 33123176566f02641beeebe754834034, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1469464310194665943}
   m_SourcePrefab: {fileID: 100100000, guid: 33123176566f02641beeebe754834034, type: 3}
 --- !u!4 &521618420742019139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8413407311169214162, guid: 33123176566f02641beeebe754834034, type: 3}
   m_PrefabInstance: {fileID: 8358474677765181073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1180818305406160780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7177716983138992413, guid: 33123176566f02641beeebe754834034, type: 3}
+  m_PrefabInstance: {fileID: 8358474677765181073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1469464310194665943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180818305406160780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e35d532e59e3fa49a1d5e76476da58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
+  rayDistance: 3
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 8192
