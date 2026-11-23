@@ -425,6 +425,7 @@ MonoBehaviour:
   agent: {fileID: 5003673246753170065}
   agentSpeed: 2
   animator: {fileID: 5655075952214395162}
+  deathEffect: {fileID: 9096384623595785872, guid: b427591c716beb0c6bb6fc99e25a3b88, type: 3}
   render: {fileID: 3091653027311219077}
 --- !u!1 &4828527675455459945
 GameObject:

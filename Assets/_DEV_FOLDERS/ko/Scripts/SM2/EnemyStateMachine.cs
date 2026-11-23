@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +15,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
     
     private EnemyBaseState currentState;
     public bool alert = false;
+
 
     [Header("Enemy Health")]
     [SerializeField] public int health = 100;
@@ -31,6 +33,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
     
     [Header("Animations")]
     [SerializeField] public Animator animator;
+    [SerializeField] public GameObject deathEffect;
 
     [Header("Debug Things")]
     [SerializeField] public MeshRenderer render;
@@ -50,12 +53,6 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
     void Update()
     {
-        //disable object if no hp left
-        if (health <= 0)
-        {
-            this.gameObject.SetActive(false);
-        }
-        
         //update current state
         currentState.UpdateState(this);
     }
@@ -64,5 +61,12 @@ public abstract class EnemyStateMachine : MonoBehaviour
     {
         currentState = state;
         state.EnterState(this);
+    }
+
+    //kill this object and instantiate effects
+    public void DieState()
+    {
+        Instantiate(deathEffect, this.transform.position, this.transform.rotation);
+        Destroy(this.gameObject);
     }
 }

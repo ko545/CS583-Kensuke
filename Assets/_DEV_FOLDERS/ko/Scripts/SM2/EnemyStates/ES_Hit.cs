@@ -22,6 +22,7 @@ public class EnemyHitState : EnemyBaseState
 
     public override void UpdateState(EnemyStateMachine context)
     {
+        //cant get hit again within wait time
         while (wait > 0.0f)
         {
             wait -= Time.deltaTime;
