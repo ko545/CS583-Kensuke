@@ -426,6 +426,9 @@ MonoBehaviour:
   agentSpeed: 2
   animator: {fileID: 5655075952214395162}
   render: {fileID: 3091653027311219077}
+  baseMaterial: {fileID: 2100000, guid: 96facec516d5534f998075128d496837, type: 2}
+  alternateMaterial: {fileID: 2100000, guid: ff2bed5c4a7922dc3999e1ad97733a5e, type: 2}
+  mesh: {fileID: 181115014775592838}
 --- !u!1 &4828527675455459945
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +842,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a5e23fd9dbaa3fb0b23981728e2c4d8, type: 3}
+--- !u!137 &181115014775592838 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2131111994242573069, guid: 5a5e23fd9dbaa3fb0b23981728e2c4d8, type: 3}
+  m_PrefabInstance: {fileID: 2238368403621901451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1772994700650353504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a5e23fd9dbaa3fb0b23981728e2c4d8, type: 3}

@@ -3,7 +3,7 @@ using UnityEngine;
 public class ES_SlimeAttack : EnemyAttackState
 {
     private bool waitingToExit = false;
-        
+    
     public override void EnterState(EnemyStateMachine context)
     {
         Debug.Log("in SLIME ATTACK state");
@@ -21,14 +21,17 @@ public class ES_SlimeAttack : EnemyAttackState
 
     public override void UpdateState(EnemyStateMachine context)
     {
+        if (context.HurtBox.playerIsInRange())
+        {
+            waitingToExit = false;
+            GotHit(context);
+        }
         //exit condition was met and waiting for attack_end animation to finish
         if (waitingToExit)
         {
-            //context.HitBox.gameObject.SetActive(true);
             //check if attack_end animation is done
             if (context.animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.2f)
             {
-                context.HitBox.gameObject.SetActive(false);
                 //switch to appropriate state once done
                 context.SwitchState(context.AttackRange.playerIsInRange() ? context.AttackState : context.AlertState);
             }
@@ -39,18 +42,16 @@ public class ES_SlimeAttack : EnemyAttackState
             if (context.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >  0.8f)
             {
                 context.HitBox.gameObject.SetActive(true);
-                //if attack is done and player is not in range, play attack_end and start the scene exit
+                context.HurtBox.gameObject.SetActive(false);
+                //if attack is done and player is not in range, play attack_end and start the state exit
                 if (!context.AttackRange.playerIsInRange())
                 {
                     context.animator.Play("attack_end");
                     context.HurtBox.setStatus(false); //dont worry about why this is here :)
+                    context.HitBox.gameObject.SetActive(false);
+                    context.HurtBox.gameObject.SetActive(true);
                     waitingToExit = true;
                 }
-            }
-            else if (context.HurtBox.playerIsInRange())
-            {
-                waitingToExit = false;
-                GotHit(context);
             }
         }
     }

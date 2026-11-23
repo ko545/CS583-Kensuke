@@ -1,5 +1,8 @@
+using UnityEngine;
+
 public class SM_Slime : EnemyStateMachine
 {
+
     //constructor
     SM_Slime()
     {
