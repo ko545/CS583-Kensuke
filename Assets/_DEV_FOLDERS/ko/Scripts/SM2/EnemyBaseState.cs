@@ -1,3 +1,6 @@
+using Unity.VisualScripting.FullSerializer;
+using UnityEngine;
+
 public abstract class EnemyBaseState
 {
     public abstract void EnterState(EnemyStateMachine context);
@@ -10,7 +13,9 @@ public abstract class EnemyBaseState
         //disable the trigger so next hit counts 
         //this probably wont be needed once player attack animations exist
         context.HurtBox.setStatus(false);
-        //go to enemy hit state
-        context.SwitchState(context.HitState);
+        
+        //go to appropriate state
+        if (context.health <= 0) context.DieState();
+        else context.SwitchState(context.HitState);
     }
 }
