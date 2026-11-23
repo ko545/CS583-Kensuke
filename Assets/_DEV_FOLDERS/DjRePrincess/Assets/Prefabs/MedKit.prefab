@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2868acc330c293478111dfa75669bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MedKit
-  promptMessage: Use (+20 Health)
+  promptMessage: +20 Health
   playerObjName: Player Variant

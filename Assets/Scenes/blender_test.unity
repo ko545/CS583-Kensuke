@@ -246,67 +246,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 150, y: -30, z: 0}
---- !u!1001 &857045428
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4326127068503028953, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_Name
-      value: MedKit (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494227110733118861, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: promptMessage
-      value: +20 Health
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 88.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
 --- !u!1 &868016309
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,67 +548,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1269728999
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4326127068503028953, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_Name
-      value: MedKit (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494227110733118861, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: promptMessage
-      value: +20 Health
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 85.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
 --- !u!1 &1323989229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,10 +1063,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MedKit
       objectReference: {fileID: 0}
-    - target: {fileID: 5494227110733118861, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
-      propertyPath: promptMessage
-      value: +20 Health
-      objectReference: {fileID: 0}
     - target: {fileID: 8939434741500375075, guid: f09b1c5cb8ec9ac4480f58b55081f0b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1243,7 +1117,5 @@ SceneRoots:
   - {fileID: 1323989230}
   - {fileID: 1908210115}
   - {fileID: 7394677011709435215}
-  - {fileID: 857045428}
-  - {fileID: 1269728999}
   - {fileID: 917694396}
   - {fileID: 1148839165}
