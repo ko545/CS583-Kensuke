@@ -5,6 +5,12 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float playerHealth = 100f;
     [SerializeField] private float damage = 10f;
+
+    public void Heal(int healAmount)
+    {
+        playerHealth += healAmount;
+        print(playerHealth);
+    }
     
     public void TakeDamage()
     {

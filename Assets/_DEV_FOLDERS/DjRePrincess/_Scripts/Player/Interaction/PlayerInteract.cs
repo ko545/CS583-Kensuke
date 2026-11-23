@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // Purpose: Sees if the Player can interact with an game object
 public class PlayerInteract : MonoBehaviour
@@ -7,11 +8,14 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask interactableLayer;
     private Camera cam;
     private PromptMessage promptMessageObj;
+    private InputAction interactAction;
+    private string interactText = "Interact";
     
     void Start()
     {
         cam = GetComponentInChildren<Camera>();
         promptMessageObj = GetComponent<PromptMessage>();
+        interactAction = InputSystem.actions.FindAction(interactText);
     }
 
     // Update is called once per frame
@@ -30,14 +34,20 @@ public class PlayerInteract : MonoBehaviour
         // make a variable to store info when a ray hits a collider 
         RaycastHit hitInfo;
 
-        // Physics.raycast() is the one actually making the ray  
-        // out means we are returning a value, putting it into hitInfo
+        // Make the actual ray
         if (Physics.Raycast(ray, out hitInfo, rayDistance, interactableLayer))
         {
-            bool objHasInteractableComponent = hitInfo.collider.GetComponent<Interactable>();
+            bool objHasInteractableComponent = hitInfo.collider.GetComponent<Interactable>() != null    ;
             if (objHasInteractableComponent)
             {
-                promptMessageObj.UpdateText((hitInfo.collider.GetComponent<Interactable>().promptMessage));
+                Interactable interactableComponent = hitInfo.collider.GetComponent<Interactable>();
+                promptMessageObj.UpdateText(interactableComponent.promptMessage);
+
+                bool playerInteracted = interactAction.triggered;
+                if (playerInteracted)
+                {
+                    interactableComponent.BaseInteract();
+                }
             }
         }
         
