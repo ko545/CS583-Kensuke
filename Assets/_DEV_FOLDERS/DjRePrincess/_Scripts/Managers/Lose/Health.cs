@@ -9,15 +9,20 @@ public class Health : MonoBehaviour
     public void Heal(int healAmount)
     {
         playerHealth += healAmount;
-        print(playerHealth);
+        PrintPlayerHealth();
     }
     
     public void TakeDamage()
     {
         playerHealth -= damage;
-        print(playerHealth);
+        PrintPlayerHealth();
 
         CheckIfPlayerDead();
+    }
+
+    private void PrintPlayerHealth()
+    {
+        print("Player Health: " + playerHealth);
     }
 
     private void CheckIfPlayerDead()

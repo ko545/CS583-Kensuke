@@ -224,7 +224,7 @@ public partial class @MyInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""17a01182-06ec-4d52-bbcb-ff7e47395b73"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
