@@ -25,8 +25,9 @@
     - Music
 - 
 
-current branches:
-- Player-Movement : DjRePrincess <- this is basically main
+**Current Branches:**
+- Player-Movement : DjRePrincess
+- Player-Interactions : DjRePrincess  <- this is basically main
 - enemies         : ko545
 - Menuing, UI     : emnle04
 - SFX              : hmoha-dev
