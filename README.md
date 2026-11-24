@@ -2,7 +2,7 @@
 
 **Name of group members**:   
 - Danae Pascual  
--  
+- A. Cadena
 -  
 -  
 
@@ -15,11 +15,15 @@
     - Player Combat
     - Player Interactions
     - Game Manager 
--  
--  
--  
+- A. Cadena:
+    - Enemy Modeling, Rigging & Animation
+    - Enemy Implementation & Interactions
+    - Level Design
+    - Visual Effects
+- 
+- 
 
 current branches:
-- Player-Movement : DjRePrincess
+- Player-Movement : DjRePrincess <- this is basically main
 - enemies         : ko545
 - Menuing, UI     : emnle04
