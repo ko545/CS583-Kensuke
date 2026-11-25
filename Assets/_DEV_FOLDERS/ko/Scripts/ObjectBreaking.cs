@@ -6,7 +6,10 @@ public class ObjectBreaking : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Instantiate(objectToSpawn, this.transform.position, this.transform.rotation);
+        Quaternion temp = this.transform.rotation;
+        temp.x = 0;
+        
+        Instantiate(objectToSpawn, this.transform.position, temp);
         Destroy(this.gameObject);
     }
 }
