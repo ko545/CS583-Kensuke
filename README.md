@@ -1,4 +1,4 @@
-**Name of the game**:    
+**Name of the game**: Mauve
 
 **Name of group members**:   
 - Danae Pascual  
