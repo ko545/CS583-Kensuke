@@ -4,7 +4,7 @@
 - Danae Pascual  
 - A. Cadena
 - Hussein Mohamud
--  
+- Emily Le
 
 **Current target for the game**: 
 - 1 complete level with maybe a boss at the end.
@@ -23,7 +23,9 @@
 - Hussein Mohamud:
     - Sound Effects
     - Music
-- 
+- Emily Le:
+    - UI
+    - Menus
 
 **Current Branches:**
 - Player-Movement : DjRePrincess
