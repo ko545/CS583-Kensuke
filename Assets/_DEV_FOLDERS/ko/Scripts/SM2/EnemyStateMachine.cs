@@ -1,0 +1,72 @@
+using System;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.AI;
+
+public abstract class EnemyStateMachine : MonoBehaviour
+{
+    //basic states
+    [NonSerialized] public EnemyBaseState IdleState;
+    [NonSerialized] public EnemyBaseState AlertState;
+    [NonSerialized] public EnemyBaseState RotateState;
+    [NonSerialized] public EnemyBaseState ChaseState;
+    [NonSerialized] public EnemyBaseState AttackState;
+    [NonSerialized] public EnemyBaseState HitState;
+    
+    private EnemyBaseState currentState;
+    public bool alert = false;
+
+
+    [Header("Enemy Health")]
+    [SerializeField] public int health = 100;
+    
+    [Header("Sensors")]
+    [SerializeField] public EnemySensors ViewRange;
+    [SerializeField] public EnemySensors ChaseRange;
+    [SerializeField] public EnemySensors AttackRange;
+    [SerializeField] public EnemySensors HurtBox;
+    [SerializeField] public EnemySensors HitBox;
+    
+    [Header("Navigation Agent")]
+    [SerializeField] public NavMeshAgent agent;
+    [SerializeField] private float agentSpeed = 3.5f;
+    
+    [Header("Animations")]
+    [SerializeField] public Animator animator;
+    [SerializeField] public GameObject deathEffect;
+
+    [Header("Debug Things")]
+    [SerializeField] public MeshRenderer render;
+
+    void Start()
+    {
+        HitBox.gameObject.SetActive(false);
+        render.material.color = Color.white;
+        
+        //set agent speed
+        agent.speed = agentSpeed;
+        
+        //setup initial state
+        currentState = IdleState; 
+        currentState.EnterState(this);
+    }
+
+    void Update()
+    {
+        //update current state
+        currentState.UpdateState(this);
+    }
+
+    public void SwitchState(EnemyBaseState state)
+    {
+        currentState = state;
+        state.EnterState(this);
+    }
+
+    //kill this object and instantiate effects
+    public void DieState()
+    {
+        Instantiate(deathEffect, this.transform.position, this.transform.rotation);
+        Destroy(this.gameObject);
+    }
+}
